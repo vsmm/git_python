@@ -11,12 +11,15 @@ contador = 0
 
 try:
     while True:
-        if GPIO.input(27):
+        if (GPIO.input(27)== 1):
             GPIO.output (17, 1)
             contador = contador + 1
             print 'Contador:', contador
         else:
             GPIO.output(17,0)
             sleep(10)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+
 finally:
     GPIO.cleanup()
