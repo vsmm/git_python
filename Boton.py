@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-
+from time import sleep
 #GPIO.setmode(GPIO.BOARD)
 GPIO.setmode(GPIO.BCM)
 
@@ -17,6 +17,6 @@ try:
             print 'Contador:', contador
         else:
             GPIO.output(17,0)
-
-except KeyboardInterrupt:
+            sleep(1)
+finally:
     GPIO.cleanup()
