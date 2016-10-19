@@ -19,6 +19,6 @@ try:
         else:
             GPIO.output(17,0)
             sleep(0.1)
-    print 'Contador:', contador
+    print 'Contador final:', contador
 finally:
     GPIO.cleanup()
