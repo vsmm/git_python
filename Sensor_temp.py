@@ -15,5 +15,5 @@ def get_temp_sens():
 i = 1
 while i <= 30:
     mensaje = str(get_temp_sens()) + " ºC"
-    print(mensaje)
+    print("La temperatura es: " mensaje)
     i += 1
