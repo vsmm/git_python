@@ -5,7 +5,6 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(27, GPIO.IN)
 GPIO.setup(17, GPIO.OUT)
-GPIO.input(27,0)
 GPIO.output(17,0)
 
 contador = 0
