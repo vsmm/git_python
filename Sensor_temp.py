@@ -9,16 +9,10 @@ def get_temp_sens():
         temperature = float(temperaturedata[2:])
         temperature = temperature / 1000
         return float(temperature)
-<<<<<<< HEAD
 
-mensaje = str(get_temp_sens()) + " ºC"
-
-print(mensaje)
-=======
 mensaje = str(get_temp_sens()) + " ºC"
 
 i = 1
 while i <= 3:
     print(mensaje)
     i += 1
->>>>>>> prueba
