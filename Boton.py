@@ -13,12 +13,11 @@ try:
     while contador <= 15:
         if GPIO.input(27):
             GPIO.output (17, 1)
-            #contador = contador + 1
+            contador = contador + 1
             #print 'Contador:', contador
         else:
             GPIO.output(17,0)
             sleep(0.1)
-    contador = contador + 1
-    print 'Contador :', contador
+    print 'Contador:', contador
 finally:
     GPIO.cleanup()
