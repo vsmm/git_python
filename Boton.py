@@ -5,7 +5,8 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(27, GPIO.IN)
 GPIO.setup(17, GPIO.OUT)
-#GPIO.output(17,0)
+GPIO.input(27,0)
+GPIO.output(17,0)
 
 contador = 0
 
@@ -17,9 +18,6 @@ try:
             print 'Contador:', contador
         else:
             GPIO.output(17,0)
-            sleep(10)
-except KeyboardInterrupt:
-    GPIO.cleanup()
 
 finally:
     GPIO.cleanup()
