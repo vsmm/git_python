@@ -40,7 +40,7 @@ gHS = 830
 aH = 880
 aHS = 910
 bH = 933
-
+i = 0
 #esta funcion es para hacer la onda cuadrada de la senial que el buzzer usa
 def beep(nota, duracion):
     #esto es el semi-periodo de cada nota
