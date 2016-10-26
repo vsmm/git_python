@@ -51,10 +51,10 @@ def beep(nota, duracion):
 
     while i < tiempo:
         GPIO.output(17,1)
-        sleep(beepdelaymicrosegundo)
+        sleep(beepDelay)
         #2do semi-periodo
         GPIO.output(17,0)
-        sleep(beepdelaymicrosegundo)
+        sleep(beepDelay)
 
     GPIO.output(17,0)
     sleep(0.02)
