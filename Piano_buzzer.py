@@ -150,3 +150,4 @@ def play():
     beep( a, 1000)
 
 play()
+GPIO.cleanup()

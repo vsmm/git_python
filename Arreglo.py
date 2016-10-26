@@ -2,7 +2,7 @@
 #-*-coding: utf-8 -*-
 from array import array
 
-miArreglo = array("i", [10,20,30])
+miArreglo = array("i", [10,20,30,40])
 i = 0
 
 for value in miArreglo:
