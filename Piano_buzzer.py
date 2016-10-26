@@ -148,6 +148,9 @@ def play():
     beep( f, 375)
     beep( c, 125)
     beep( a, 1000)
+try:
+    play()
 
-play()
-GPIO.cleanup()
+
+finally:
+    GPIO.cleanup()
