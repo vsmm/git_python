@@ -13,32 +13,35 @@ GPIO.setup(Trig, GPIO.OUT)
 GPIO.setup(Echo, GPIO.IN)
  
 #Para leer la distancia del sensor al objeto, creamos una funcion
-def detectarObstaculo():
- 
-   GPIO.output(Trig, False) #apagamos el pin Trig
-   time.sleep(2*10**-6) #esperamos dos microsegundos
-   GPIO.output(Trig, True) #encendemos el pin Trig
-   time.sleep(10*10**-6) #esperamos diez microsegundos
-   GPIO.output(Trig, False) #y lo volvemos a apagar
- 
+def detectarObstaculo(): 
+   
+    GPIO.output(Trig, False) #apagamos el pin Trig
+    time.sleep(2*10**-6) #esperamos dos microsegundos
+    GPIO.output(Trig, True) #encendemos el pin Trig
+    time.sleep(10*10**-6) #esperamos diez microsegundos
+    GPIO.output(Trig, False) #y lo volvemos a apagar
+    
+
   #empezaremos a contar el tiempo cuando el pin Echo se encienda
-   while GPIO.input(Echo) == 0:
-      start = time.time()
- 
-   while GPIO.input(Echo) == 1:
-      end = time.time()
+    while GPIO.input(Echo) == 0:
+       start = time.time()
+     
+     # if(GPIO.input(Echo) == 1):
+      #    end = time.time()
+    while GPIO.input(Echo) == 1:
+       end = time.time()
  
    #La duracion del pulso del pin Echo sera la diferencia entre
    #el tiempo de inicio y el final
-   duracion = end-start
+    duracion = end - start
  
    #Este tiempo viene dado en segundos. Si lo pasamos
    #a microsegundos, podemos aplicar directamente las formulas
    #de la documentacion
-   duracion = duracion*10**6
-   medida = duracion/58 #hay que dividir por la constante que pone en la documentacion, nos dara la distancia en cm
+    duracion = duracion*10**6
+    medida = duracion/58 #hay que dividir por la constante que pone en la documentacion, nos dara la distancia en cm
  
-   print "%.2f" %medida #por ultimo, vamos a mostrar el resultado por pantalla
+    print "%.2f" %medida #por ultimo, vamos a mostrar el resultado por pantalla
  
 #Bucle principal del programa, lee el sensor. Se sale con CTRL+C
 while True:
